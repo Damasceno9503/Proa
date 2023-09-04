@@ -1,2 +1,2 @@
-# Proa
-Esse repositório e exclusivos para atividades do Proa
+## Proa
+Esse repositório e exclusivos para atividades do Proa.
