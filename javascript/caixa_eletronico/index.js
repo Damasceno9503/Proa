@@ -29,7 +29,7 @@ function comeco() {
             transf();
             break;
         case 5:
-            alert("Obrigado por utilizar nossos serviços. "+ nome +" ,foi um prazer ter você por aqui!")
+            alert(nome +", foi um prazer ter você por aqui! Obrigado por utilizar nossos serviços.")
             confirm("Retire seu cartão.")
             break;
         default:
