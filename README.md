@@ -8,4 +8,4 @@ https://damasceno9503.github.io/proa/pagina_principal/
 <p>O Proa disponibiliza um curso de Programador Web Full Stack</p>
 <p>No Proa, participei de diversas atividades e exercícios. Abaixo, você poderá saber mais sobre elas.</p><br>
 
-##Atividades em HTML5 e CSS3 <br>
+## Atividades em HTML5 e CSS3 <br>
