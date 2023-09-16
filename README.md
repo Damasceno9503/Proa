@@ -1,5 +1,5 @@
 # Proa
-<p>Esse repositório e exclusivos para atividades do Proa.</p>
+<h1>Esse repositório e exclusivos para atividades do Proa.</h2>
 https://damasceno9503.github.io/proa/pagina_principal/
 <br>
 
@@ -9,3 +9,4 @@ https://damasceno9503.github.io/proa/pagina_principal/
 <p>No Proa, participei de diversas atividades e exercícios. Abaixo, você poderá saber mais sobre elas.</p><br>
 
 ## Atividades em HTML5 e CSS3 <br>
+<h2></h2>
