@@ -1,67 +1,117 @@
-/* <!-- 1. Escreva um programa em que o usuário informe dois números utilizando o "prompt". Então escreva em tela o maior deles. --> */
-/* pri = prompt("Diga o primeiro valor: ");
-seg = prompt("Diga o segundo valor: ");
+confirm("Insira seu cartão.")
 
-if (parseInt(pri) >= parseInt(seg)){
-    document.write(pri);
-} else {
-    document.write(seg);
+let nome = prompt("Qual é seu nome? ")
+let saldo = 200.27;
+let alternativas;
+const senha = 3589;
+let historico = [];
+
+comeco();
+
+function comeco() {
+    alternativas = parseFloat(prompt("Bem vindo " + nome + ", o que gosta de acessar? \n1. Saldo/Extrato \n2. Saque \n3. Deposito \n4. Transferência \n5. Sair"));
+    console.log("A senha para acessar as opções é 3589");
+    switch (alternativas) {
+        case 1:
+            usu_senha();
+            extrato();
+            break;
+        case 2:
+            usu_senha();
+            saque();
+            break;
+        case 3:
+            usu_senha();
+            deposito();
+            break;
+        case 4:
+            usu_senha();
+            transf();
+            break;
+        case 5:
+            alert(nome +", foi um prazer ter você por aqui! Obrigado por utilizar nossos serviços.");
+            confirm("Retire seu cartão.");
+            break;
+        default:
+            alert("Opção inválida, Por favor informe um número valido.");
+            comeco();
+    }
 }
- */
 
-/* 2. Faça um programa que leia um valor informado pelo usuário e diga se o valor informado é positivo, negativo ou zero. */
-/* valor = prompt("Diga um valor: ")
-
-if (parseFloat(valor) > 0){
-    document.write("Esse valor e positivo. ")
-} else if(parseFloat(valor) === 0){
-    document.write("Esse valor e neutro. ")
-} else{
-    document.write("esse valor e negativo. ")
-} */
-
-/* 3. Faça um programa para ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles. */
-/* while (true) {
-    var num1 = parseFloat(prompt("Digite um número: "))
-    var num2 = parseFloat(prompt("Digite outro número: "))
-    var num3 = parseFloat(prompt("Digite mais um número: "))
-
-    if (num1 === num2) {
-        alert("Você digitou números iguais. Digite números diferentes. ")
-    } else if (num1 === num3){
-        alert("Você digitou números iguais. Digite números diferentes. ")
-    } else if (num2 === num3){
-        alert("Você digitou números iguais. Digite números diferentes. ")
-    }else {
-        if (num1 > num2 && num1 > num3) {
-            document.write(num1);
-        } else if (num2 > num1 && num2 > num3) {
-            document.write(num2);
-        } else if (num3 > num1 && num3 > num2) {
-            document.write(num3);
-        } else {
-            alert("Os números são iguais. ")
-        }
-        break;
+function colocarespaco(padrão, comprimento) {
+    let espacos = "";
+    for (var i = 0; i < comprimento; i++) {
+        espacos += padrão;
     }
-} */
+    return espacos;
+}
 
-/* 4. Faça um programa que leia 3 valores informados pelo usuário (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores. */
+function extrato() {
+    let espacos = colocarespaco(" ", 20);
+    const msgextrato = "Extrato\nPonto Frio" + colocarespaco(" ", 22) + "- R$ 327,83\nCasas Bahia" + espacos + "- R$ 548,29\nAmericanas" + espacos + "- R$ 210,25\n" + historico.join("\n");
+    alert(msgextrato + "\n\nSeu saldo é " + colocarespaco(" ", 22) + saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\n");
+    console.log("Aqui e mostrado o saldo do usuario.");
+    comeco();
+}
 
-var num1 = parseFloat(prompt("Informe um número :"))
-var num2 = parseFloat(prompt("Informe mais um número: "))
-var num3 = parseFloat(prompt("Informe outro número: "))
+function saque() {
+    let espacos = colocarespaco(" ", 13)
+    let valor = parseFloat(prompt("Qual o valor que gostaria de sacar?"));
+    if (saldo >= valor) {
+        saldo = saldo - valor;
+        historico.push("Saque realizado" + espacos + "- " + valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        alert("Seu saldo agora é " + saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        console.log("Aqui e mostrado o saque realizado.");
+        comeco();
+    } else if (saldo <= valor || isNaN(valor) || valor < 0) {
+        alert("Por favor informe um número valido.");
+        saque();
+    }
+}
 
-if (num1 === num2 || num1 === num3 || num2 === num3) {
-    alert("Você Digitou números iguais, digite números diferentes. ")
-} else {
-    if (num1 > num2 && num1 > num3) {
-        document.write(num1);
-    } else if (num2 > num1 && num2 > num3) {
-        document.write(num2);
-    } else if (num3 > num1 && num3 > num2) {
-        document.write(num3);
+function transf() {
+    let espacos = colocarespaco(" ", 17);
+    let agencia = parseInt(prompt("Informe o número da agência: "));
+    let conta = parseInt(prompt("Informe o número da conta: "));
+    let din_transf = parseFloat(prompt("informe o valor: "));
+    if (saldo >= din_transf) {
+        saldo = saldo - din_transf;
+        historico.push("Transferência " + espacos + "- " + din_transf.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        alert("Você acaba de tranferir o valor " + din_transf.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nSeu saldo agora é " + format_valor(saldo));
+        console.log("Aqui são as transferências realizadas.");
+        comeco();
+    } else if (saldo <= din_transf || isNaN(din_transf) || isNaN(agencia) || isNaN(conta) || din_transf < 0) {
+        alert("Por favor, informe um número valido.");
+        transf();
+    }
+}
+
+function deposito() {
+    let espacos = colocarespaco(" ", 23);
+    let din_dep = parseFloat(prompt("Digite o valor para realizar o deposito"));
+    if(saldo = saldo + din_dep){
+        historico.push("Deposito " + espacos + "+ " + din_dep.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        alert("Seu saldo agora é " + saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        console.log("Aqui e mostrado o deposito realizado.")
+        comeco();
+    } else if (isNaN(din_dep) || din_dep < 0){
+        alert("Por favor, informe um número valido.")
+    }
+}
+
+function usu_senha() {
+    let dig_senh = parseFloat(prompt("Digite a senha"));
+    if (dig_senh === senha) {
+        return;
     } else {
-        
+        alert("informe a senha corretamente.");
+        usu_senha();
     }
+}
+
+function format_valor(valor){
+    if (typeof valor != "number"){
+        return ""
+    }
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 }
