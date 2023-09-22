@@ -1,4 +1,4 @@
-# Proa
+<h1>Proa</h1> 
 <p>Esse repositório é exclusivo para atividades do Proa.</p>
 https://damasceno9503.github.io/proa/pagina_principal/
 <br>
