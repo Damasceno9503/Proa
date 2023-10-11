@@ -9,7 +9,7 @@
 }
 
 body{
-    background-image: url(./img/teste.jpg);
+    background-image: url(../img/teste.jpg);
 }
 
 header{
@@ -92,7 +92,7 @@ input{
 }
 
 .formas{
-    background-image: url(./img/cropped-1920-1080-865030.jpg);
+    background-image: url(../img/cropped-1920-1080-865030.jpg);
     display: flex;
     width: 24vw;
     height: 26vh;
