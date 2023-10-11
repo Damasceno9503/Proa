@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root{
+    --cor01 :rgba(206, 18, 18, 0.863);
+}
+
+body{
+    background-image: url(/img/teste.jpg);
+}
+
+header{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: larger;
+    margin: 1%;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-color: black;
+}
+
+main{
+    color: white;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+h2{
+    font-weight: bold;
+}
+
+nav:hover{
+    background-color: var(--cor01)
+}
+
+a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.formas:hover {
+    border-color: var(--cor01);
+}
+
+nav{
+    margin-top: 0.5%;
+    padding: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    transition-duration: .2s;
+    margin-bottom: 6px;
+}
+
+nav > a {
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    width: 10vw;
+    height: 20vh;
+}
+
+button{
+    padding: 4px;
+    border-radius: 3px;
+}
+
+input{
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.valores{
+    display: block;
+}
+
+.cfg {
+    display: flex;
+    flex-flow: wrap;
+    margin: 2%;
+    margin-left: 11vw;
+}
+
+.formas{
+    background-image: url(/img/cropped-1920-1080-865030.jpg);
+    display: flex;
+    width: 24vw;
+    height: 26vh;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5%;
+    padding: 6px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+
+}
+
+.formas img{
+    display: flex;
+    flex: 1;
+    width: auto;
+    height: 180px;
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 2%;
+    text-align: center;
+    padding: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.resultado_tela{
+    display: block;
+    width: 26vh;
+    align-items: center;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 3px;
+    padding: 3px;
+}

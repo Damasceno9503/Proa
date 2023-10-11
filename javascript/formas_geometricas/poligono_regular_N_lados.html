@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icons/poligono_regular_com_N_Lados-16x16.png" type="image/x-icon">
+    <title>Poligono Regular com N Lados</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Calculadora do Poligono Regular com N Lados</h1>
+            <nav><a href="index.html">Home</a></nav>
+            <nav><a href="#">Sobre mim</a></nav>
+            <nav><a href="https://github.com/Damasceno9503" target="_blank">Rede Sociais</a></nav>
+        </header>
+        <div class="calculo">
+            <img src="img/poligono_regular_com_n_lados2.png" alt="Uma imagem da forma de um polígono regular com N lados">
+            <span class="valores">
+                <label for="lado">Lados:</label>
+                <input type="number" id="lado" placeholder="0">
+            </span>
+            <span class="valores">
+                <label for="comprimento">Comprimento:</label>
+                <input type="number" id="comprimento" placeholder="0">
+            </span>
+            <span class="valores">
+                <label for="apotema">Apotema:</label>
+                <input type="number" id="apotema" placeholder="0">
+            </span>
+            <button onclick="calcular_poligonoRegularComNLados()">
+                Calcular
+            </button>
+            <div class="resultado_tela">
+                <h2 id="tela">Resultado</h2>
+            </div>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>

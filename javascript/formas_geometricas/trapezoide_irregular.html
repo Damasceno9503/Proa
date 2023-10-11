@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icons/trapezoide irregular-16x16.png" type="image/x-icon">
+    <title>Trapezoide irregular</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Calculadora da trapezoide irregular</h1>
+            <nav><a href="index.html">Home</a></nav>
+            <nav><a href="#">Sobre mim</a></nav>
+            <nav><a href="https://github.com/Damasceno9503" target="_blank">Rede Sociais</a></nav>
+        </header>
+        <div class="calculo">
+            <img src="img/trapezoide_irregular2.png" alt="Uma imagem da forma de trapezoide irregular">
+            <span class="valores">
+                <label for="base_maior">Base maior:</label>
+                <input type="number" id="base_maior" placeholder="0">
+            </span>
+            <span class="valores">
+                <label for="base_menor">Base menor:</label>
+                <input type="number" id="base_menor" placeholder="0">
+            </span>
+            <span class="valores">
+                <label for="altura">Altura:</label>
+                <input type="number" id="altura" placeholder="0">
+            </span>
+            <button onclick="calcular_trapezoideIrregular()">
+                Calcular
+            </button>
+            <div class="resultado_tela">
+                <h2 id="tela">Resultado</h2>
+            </div>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+</html>
